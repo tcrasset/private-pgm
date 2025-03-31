@@ -331,12 +331,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "disjoint-set", specifier = ">=0.8.0" },
-    { name = "matplotlib", specifier = ">=3.10.1" },
-    { name = "networkx", specifier = ">=3.4.2" },
-    { name = "numpy", specifier = ">=2.2.4" },
-    { name = "pandas", specifier = ">=2.2.3" },
-    { name = "scipy", specifier = ">=1.15.2" },
+    { name = "disjoint-set" },
+    { name = "matplotlib" },
+    { name = "networkx" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "scipy" },
 ]
 
 [package.metadata.requires-dev]
