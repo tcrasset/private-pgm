@@ -244,7 +244,11 @@ class GraphicalModel:
                 return group
 
             if len(proj) >= 1:
-                df = df.groupby(list(proj), group_keys=False).apply(foo)
+                # Select every column explicitly so the grouping columns stay in
+                # the frame handed to `foo`. pandas 3 drops them otherwise, and
+                # `synthetic_data` builds each column on top of the previous
+                # ones, so the result would lose a column per iteration.
+                df = df.groupby(list(proj), group_keys=False)[list(df.columns)].apply(foo)
             else:
                 df[col] = synthetic_col(marg, df.shape[0])
 
